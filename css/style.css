@@ -1,0 +1,75 @@
+.input_acces { grid-area: input_acces; }
+.input_liste { grid-area: input_liste; }
+.input_admin { grid-area: input_admin; }
+.liste { grid-area: liste; }
+.console { grid-area: console; }
+.bigtitle { grid-area: bigtitle; }
+
+.cssgrid {
+    display: grid;
+    grid-template-areas:
+        'bigtitle bigtitle'
+        'input_acces liste'
+        'input_liste liste'
+        'input_admin liste'
+        'console     liste';
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 6px;
+    background-color: darkgrey;
+}
+
+.bigtitle {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    background-color: rgb(90, 120, 255);
+    color: black;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.7em 0 0.7em 0;
+}
+
+.console {
+    font-family: 'Courier New', 'Courier', 'monospace';
+    font-size: 0.8em;
+    color: rgb(195, 195, 195);
+    background-color: black;
+}
+
+.input_acces {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    background-color: rgb(182, 254, 250);
+    color: black;
+    font-size: 0.9em;
+}
+
+.input_admin {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    background-color: lightgoldenrodyellow;
+    color: black;
+    font-size: 0.9em;
+}
+
+.input_liste {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    background-color: rgb(191, 255, 198);
+    color: black;
+    font-size: 0.9em;
+}
+
+.liste {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+    background-color: grey;
+    color: black;
+    font-size: 0.9em;
+}
+
+.ico_action img {
+    height: 1.5em;
+    width: auto;
+    margin-left: 0.5em;
+}
+
+.h2 {
+    font-weight: bold;
+    text-align: center;
+}
