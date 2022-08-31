@@ -13,6 +13,10 @@ if(array_key_exists('act', $_GET)) $action = $_GET['act'];
 
 echo "Action = '$action'<br>";
 echo "User = '$user'<br>";
-echo "Hash du password = '" . hash($config['password_hash'], $pass) . "'<br>";
+// echo "Hash du password = '" . hash($config['password_hash'], $pass) . "'<br>";
+echo "Password = '$pass'<br>";
+
+// 
+// $db = new SQLite3($config['db_file']);
 
 ?>
