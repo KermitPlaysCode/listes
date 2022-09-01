@@ -1,13 +1,7 @@
 <?php
 
 // Introduction
-require_once('config.php');
-require_once('data/messages_FR.php');
-require_once('constant.php');
-global $config;
-global $div_to_file;
-global $msg;
-global $db_requests;
+include "include-all.php";
 
 // Take care of first run : do we have a DB file ?
 $run_init = FALSE;

@@ -1,5 +1,7 @@
 <?php
+
 $cd = getcwd();
+
 $div_to_file = array(
     'liste'         => $cd . '/data/liste.div.php',
     'input_admin'   => $cd . '/data/input_admin.div.php',
@@ -33,6 +35,8 @@ $db_requests = array(
     'user_password_get' => "SELECT user_pass FROM users WHERE user='_USER_';",
     'list_create' => "INSERT INTO listes (list_name, author) VALUES('_LIST_', '_USER_');",
     'list_delete' => "DELETE FROM listes WHERE list_name='_LIST_';",
+    'list_check' => "SELECT list_name FROM listes WHERE list_name='_LIST_';",
+    'list_list' => "SELECT list_name FROM listes;",
     'list_user_check' => "SELECT user_name FROM users WHERE user_name='_USER_';",
     'list_allow_user' => "INSERT INTO acces (user_name, list_name) VALUES('_USER_', '_LIST_');",
     'list_block_user' => "DELETE FROM access WHERE user_name='_USER_' AND list_name='_LIST_';"

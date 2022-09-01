@@ -24,7 +24,12 @@ $msg = array(
     'TITLE_input_acces' => 'Gestion ACCES',
     'TITLE_input_admin' => 'Gestion ADMIN',
     'TITLE_input_liste' => 'Gestion LISTES',
-    'TITLE_console' => 'Console'
+    'TITLE_console' => 'Console',
+    'LIST_CREATE_OK' => 'Création de liste avec succès',
+    'LIST_DELETE_OK' => 'Suppression de liste avec succès',
+    'LIST_CREATE_FAIL_DUP' => 'Création de liste en échec (déjà existante)',
+    'LIST_DELETE_FAIL_DB' => 'Suppression de liste en échec (accès DB)',
+    'LIST_NAME_MISSING' => "Le nom de liste n'est pas spécifié",
 );
 
 ?>
