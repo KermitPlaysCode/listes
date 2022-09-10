@@ -14,6 +14,7 @@ $msg = array(
     'TT_ADDLIST' => 'Créer la liste',
     'TT_DELLIST' => 'Supprimer la liste',
     'TT_EDITLIST' => 'Modifier la liste',
+    'TT_REFRESHLIST' => "Rafraichir la liste",
     'TT_ADDUSER' => 'Créer l\'utilisateur',
     'TT_DELUSER' => 'Supprimer l\'utilisateur',
     'TT_CHGPWD' => 'Changer le mot de passe',

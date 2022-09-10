@@ -7,12 +7,12 @@
 </p>
 <p class="ico_action">
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_ADDUSER']; ?>">
-        <img src="images/add-user-64.png" onclick="get_data('adm_add')" />
+        <img src="images/add-user-64.png" onclick="do_action('adm_add')" />
     </span>
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_DELUSER']; ?>">
-        <img src="images/remove-user-64.png" onclick="get_data('adm_del')" />
+        <img src="images/remove-user-64.png" onclick="do_action('adm_del')" />
     </span>
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_CHGPWD']; ?>">
-        <img src="images/edit-user-64.png" onclick="get_data('adm_pwd')" />
+        <img src="images/edit-user-64.png" onclick="do_action('adm_pwd')" />
     </span>
 </p>

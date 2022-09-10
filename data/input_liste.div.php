@@ -1,6 +1,8 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+
 function get_list_of_list() {
-    include "include-all.php";
+    include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
     $db = new SQLite3($config['db_file']);
     $request = $db_requests['list_list'];
     $results = $db->query($request);
@@ -39,12 +41,15 @@ function get_list_of_list() {
 </p>
 <p class="ico_action">
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_ADDLIST']; ?>">
-        <img src="images/plus-5-64.png" onclick="get_data('list_add')" />
+        <img src="images/plus-5-64.png" onclick="do_action('list_add')" />
     </span>
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_DELLIST']; ?>">
-        <img src="images/minus-5-64.png" onclick="get_data('list_del')" />
+        <img src="images/minus-5-64.png" onclick="do_action('list_del')" />
     </span>
     <span class="hint--rounded" aria-label="<?php echo $msg['TT_EDITLIST']; ?>">
-        <img src="images/minus-5-64.png" onclick="get_data('list_edit')" />
+        <img src="images/minus-5-64.png" onclick="do_action('list_edit')" />
+    </span>
+    <span class="hint--rounded" aria-label="<?php echo $msg['TT_REFRESHLIST']; ?>">
+        <img src="images/restart.png" onclick="update_data('list_refresh', 'input_liste')" />
     </span>
 </p>
