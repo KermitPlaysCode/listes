@@ -31,6 +31,8 @@ $msg = array(
     'LIST_CREATE_FAIL_DUP' => 'Création de liste en échec (déjà existante)',
     'LIST_DELETE_FAIL_DB' => 'Suppression de liste en échec (accès DB)',
     'LIST_NAME_MISSING' => "Le nom de liste n'est pas spécifié",
+    'ADM_MISSING_USER' => 'Le nom d\'utilisateur n\'est pas défini',
+    'ADM_MISSING_PASS' => 'Le mot de passe n\'est pas défini',
 );
 
 ?>

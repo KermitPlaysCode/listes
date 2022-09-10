@@ -63,3 +63,8 @@ function update_data(action_name) {
     xmlHttpReq.send(null);
     return 0;
 }
+
+// Put the value from a select into a test box
+function update_text(list_id, inputtext_id) {
+    document.getElementById(inputtext_id).value = document.getElementById(list_id).value;
+}
