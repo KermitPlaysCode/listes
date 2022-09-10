@@ -36,7 +36,7 @@ if ($action == "list_add") {
         $request = strtr($db_requests['list_create'], array("_LIST_" => $list_new));
         $results = $db->exec($request);
         if ($results == false) echo $msg['LIST_DELETE_FAIL_DB'];
-        else echo $msg['LISTE_CREATE_OK'];
+        else echo $msg['LIST_CREATE_OK'];
     }
 }
 elseif ($action == "list_del") {
