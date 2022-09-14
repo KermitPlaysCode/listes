@@ -11,7 +11,10 @@ if(array_key_exists('c_user_name', $_GET)) $list = $_GET['c_user_name'];
 if(array_key_exists('act', $_GET)) $action = $_GET['act'];
 
 echo "Action = '$action'<br>";
-echo "User = '$user'<br>";
-echo "Liste = '$list'<br>"
+echo "User/Liste = '$user/$list'<br>";
+
+$db = new SQLite3($config['db_file']);
+
+
 
 ?>

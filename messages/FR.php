@@ -22,6 +22,9 @@ $msg = array(
     'TT_ACCES_ALLOWALL' => 'Autoriser tous les utilisateurs sur cette liste',
     'TT_ACCES_DENYONE' => 'Interdire cette liste à cet utilisateur',
     'TT_ACCES_DENYALL' => 'Interdire cette liste à tous les utilisateurs',
+    "TT_EDITITEM" => "Modifier l'élément",
+    "TT_ADDITEM" => "Ajouter l'élément",
+    "TT_DELITEM" => "Supprimer l'élément",
     'TITLE_input_acces' => 'Gestion ACCES',
     'TITLE_input_admin' => 'Gestion ADMIN',
     'TITLE_input_liste' => 'Gestion LISTES',
@@ -31,8 +34,13 @@ $msg = array(
     'LIST_CREATE_FAIL_DUP' => 'Création de liste en échec (déjà existante)',
     'LIST_DELETE_FAIL_DB' => 'Suppression de liste en échec (accès DB)',
     'LIST_NAME_MISSING' => "Le nom de liste n'est pas spécifié",
-    'ADM_MISSING_USER' => 'Le nom d\'utilisateur n\'est pas défini',
-    'ADM_MISSING_PASS' => 'Le mot de passe n\'est pas défini',
+    'ADM_MISSING_USER' => "Le nom d'utilisateur n'est pas défini",
+    'ADM_MISSING_PASS' => "Le mot de passe n'est pas défini",
+    'EDIT_LIST_DOESNT_EXIST' => "La liste indiquée n'existe pas",
+    'EDIT_H_ACTIONS' => 'Actions',
+    'EDIT_H_ID' => 'ID',
+    'EDIT_H_CONTENT' => 'Elément',
+    'CHOOSE_LIST' => "Choisir une liste dans le menu à gauche",
 );
 
 ?>

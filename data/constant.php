@@ -24,10 +24,10 @@ $db_requests = array(
         'DROP TABLE users;'
         ),
     'init' => array(
-        'CREATE TABLE listes (list_name text, author text);',
-        'CREATE TABLE items (item_name text, list_name, author text);',
-        'CREATE TABLE acces (user_name text, list_name text);',
-        'CREATE TABLE users (user_name text, user_pass text);'
+        'CREATE TABLE listes (list_name text PRIMARY KEY, author text);',
+        'CREATE TABLE items (item_id integer NOT NULL PRIMARY KEY, item_content text, list_name, author text);',
+        'CREATE TABLE acces (user_name text PRIMARY KEY, list_name text);',
+        'CREATE TABLE users (user_name text PRIMARY KEY, user_pass text);'
         ),
     'user_create' => "INSERT INTO users (user_name, user_pass) VALUES('_USER_', '_PASS_');",
     'user_delete' => "DELETE FROM users WHERE user_name='_USER_';",
@@ -41,7 +41,11 @@ $db_requests = array(
     'list_list' => "SELECT list_name FROM listes;",
     'list_user_check' => "SELECT user_name FROM users WHERE user_name='_USER_';",
     'list_allow_user' => "INSERT INTO acces (user_name, list_name) VALUES('_USER_', '_LIST_');",
-    'list_block_user' => "DELETE FROM access WHERE user_name='_USER_' AND list_name='_LIST_';"
+    'list_block_user' => "DELETE FROM access WHERE user_name='_USER_' AND list_name='_LIST_';",
+    'edit_list_items' => "SELECT * FROM items WHERE list_name='_LIST_';",
+    'edit_item_add' => "INSERT INTO items (item_content, list_name, author) VALUES('_ITEM_','_LIST_','_AUTHOR_');",
+    'edit_item_del' => "DELETE FROM items WHERE item_id='_ID_'",
+    'edit_item_chg' => "UPDATE items set items_content='_ITEM_' WHERE item_id='_ID';",
     //'list_allow_all' => '',
     //'list_block_all' => ''
 );

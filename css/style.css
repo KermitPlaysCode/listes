@@ -58,7 +58,7 @@
 
 .liste {
     font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
-    background-color: grey;
+    background-color: rgb(241, 241, 241);
     color: black;
     font-size: 0.9em;
 }

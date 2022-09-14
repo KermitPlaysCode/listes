@@ -10,4 +10,6 @@ global $div_to_file;
 include $_SERVER['DOCUMENT_ROOT'] . '/' . "messages/FR.php";
 global $msg;
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/' . "lib/functions-db.php");
+
 ?>

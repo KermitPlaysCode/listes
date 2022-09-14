@@ -12,24 +12,8 @@ if(array_key_exists('act', $_GET)) $action = $_GET['act'];
 
 $db = new SQLite3($config['db_file']);
 
-function is_table($db, $table) {
-    global $db_requests;
-    $request = strtr($db_requests['list_check'], array("_LIST_" => $table));
-    $results = $db->query($request);
-    $ret_code = true;
-    $cpt_rows = 0;
-    if ($results != false) {
-        while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-            $cpt_rows += 1;
-        }
-    }
-    else error_log($request . " FAILED");
-    if ($cpt_rows == 0) $ret_code = false;
-    return $ret_code;
-}
-
 if ($action == "list_add") {
-    $res = is_table($db, $list_new);
+    $res = is_list($db, $list_new);
     if ($list_new == "") echo $msg['LIST_NAME_MISSING'];
     elseif ($res) echo $msg['LIST_CREATE_FAIL_DUP']; // "Table already exits ($list_new)";
     else {
@@ -43,7 +27,7 @@ elseif ($action == "list_del") {
     if ($list_existing == "") {
         echo $msg['LIST_NAME_MISSING'];
     }
-    $res = is_table($db, $list_existing);
+    $res = is_list($db, $list_existing);
     if ($res == true) {
         $request = strtr($db_requests['list_delete'], array("_LIST_" => $list_existing));
         $results = $db->query($request);
