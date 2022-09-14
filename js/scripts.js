@@ -50,7 +50,7 @@ const script_to_infos = {
     'update_items.php': [
         'data/liste.div.php',
         'liste',
-        [ 'e_list_name', 'e_new_content', 'e_user_name', 'l_list_name'],
+        [ 'e_list_name', 'e_new_content', 'e_user_name', 'l_list_name', 'item_id'],
         [ 'e_list_name' ]
     ]
 }
@@ -86,7 +86,6 @@ function update_data(action_name) {
     refresh_div = script_to_infos[action_script][1];
     parameter = script_to_infos[action_script][3];
     uri_parameters = '';
-    alert(parameter);
     if (parameter.length > 0 ) {
         uri_parameters = '?';
         sep = '';
@@ -114,9 +113,21 @@ function update_text(list_id, inputtext_id) {
     document.getElementById(inputtext_id).value = document.getElementById(list_id).value;
 }
 
-// trick from https://stackoverflow.com/questions/27118567/javascript-works-in-console-but-not-on-my-page
+// Update current list to edit
 function set_current_list() {
     var elem = document.getElementById('e_list_name');
-    if (elem != null) elem.value = 'demo';
+    var elem2 = document.getElementById('l_list_name');
+    if (elem == null) alert("e_list_name pas trouvé");
+    else if (elem2 == null) alert("l_list_name pas trouvé");
+    else elem.value = elem2.value;
     do_action('item_refresh');
+    return elem.value;
+}
+
+// Keep not of selected item to delete
+function set_item_id(item_id) {
+    var elem = document.getElementById('item_id');
+    if (elem != null) elem.value = item_id;
+    else alert("item_id pas trouvé")
+    return elem.value;
 }

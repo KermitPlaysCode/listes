@@ -26,13 +26,15 @@ if ( $flag_continue ) {
     echo "<thead><th>".$msg['EDIT_H_ACTIONS']."<th>".$msg['EDIT_H_ID']."<th>".$msg['EDIT_H_CONTENT']."</thead>";
 
     foreach ($items as $i) {
+        $item_id = $i[0];
+        $item_content = $i[1];
         echo '<tr><td><span class="ico_action">';
         echo '<span class="hint--rounded" aria-label="' . $msg["TT_EDITITEM"] . '">';
         echo '<img src="images/edit-user-64.png" onclick="do_action(\'item_edit\')" />';
-        echo '</span><span class="hint--rounded" aria-label="' . $msg["TT_DELUSER"] . '">';
-        echo '<img src="images/minus-5-64.png" onclick="do_action(\'item_del\')" />';
+        echo '</span><span class="hint--rounded" aria-label="' . $msg["TT_DELITEM"] . '">';
+        echo '<img src="images/minus-5-64.png" onclick="set_item_id(\''.$item_id.'\'); do_action(\'item_del\');" />';
         echo '</span></span>';
-        echo "<td>$items[0]<td>$items[1]</tr>";
+        echo "<td align='center'>$item_id<td>$item_content</tr>";
     }
     echo '<tr><td><span class="ico_action">';
     echo '<span class="hint--rounded" aria-label="'.$msg["TT_ADDITEM"].'">';
