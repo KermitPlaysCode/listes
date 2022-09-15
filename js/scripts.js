@@ -69,13 +69,22 @@ function do_action(action_name) {
             theUrl = theUrl + '&' + id + '=' + encodeURIComponent(elem.value);
         }
     }
+    myData = new FormData();
+    for (id of elem_id) {
+        var elem = document.getElementById(id);
+        if (elem != null) {
+            myData.set(id, elem.value);
+        }
+    }
     // Make the call - Asynchronous way
     let xmlHttpReq = new XMLHttpRequest();
-    xmlHttpReq.callback = () => { update_div('console', "CB<br>"+xmlHttpReq.responseText); }
+    xmlHttpReq.callback = () => update_div('console', "CB<br>"+xmlHttpReq.responseText);
     xmlHttpReq.onload =   () => { update_div('console', "OK<br>"+xmlHttpReq.responseText); update_data(action_name); }
-    xmlHttpReq.onerror =  () => { update_div('console', "ERROR<br>"+xmlHttpReq.responseText); }
+    xmlHttpReq.onerror =  () => update_div('console', "ERROR<br>"+xmlHttpReq.responseText);
     xmlHttpReq.open("GET", theUrl, true);
     xmlHttpReq.send(null);
+    // xmlHttpReq.open("POST", theUrl, true);
+    // xmlHttpReq.send(myData);
     return 0;
 }
 
