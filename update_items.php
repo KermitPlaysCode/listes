@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+include "include-all.php";
 
 $action = "";
 $user = "";
@@ -60,7 +60,9 @@ elseif ($action == "item_refresh") {
         # $results = $db->query($request);
         $db_statement = $db->prepare($db_requests['edit_list_items']);
         $results = $db_statement->bindValue(':list', $list, SQLITE3_TEXT);
-        $results = $results | $db_statement->execute();
+	// BindValue OK ?
+	if ($results != false) $results = $db_statement->execute();
+	// Exec query OK ?
         if ($results == false) echo "Failed refresh item $list";
         else echo "Success refresh item $list";
     }

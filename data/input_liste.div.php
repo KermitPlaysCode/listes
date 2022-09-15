@@ -1,5 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+include dirname(__FILE__) . "/../include-all.php";
+
 $db = new SQLite3($config['db_file']);
 ?>
 

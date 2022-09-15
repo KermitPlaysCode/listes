@@ -1,6 +1,6 @@
 <?php
-
 include "include-all.php";
+
 $db = new SQLite3($config['db_file']);
 
 $user = "";

@@ -1,5 +1,4 @@
 <?php
-
 include "include-all.php";
 
 $user = "";

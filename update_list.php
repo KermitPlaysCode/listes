@@ -1,5 +1,4 @@
 <?php
-
 include "include-all.php";
 
 $list_existing = "";
@@ -20,7 +19,7 @@ if ($action == "list_add") {
         # $request = strtr($db_requests['list_create'], array("_LIST_" => $list_new));
         # $results = $db->exec($request);
         $db_statement = $db->prepare($db_requests['list_create']);
-        $results = $db_statement->bindValue(':list', $list, SQLITE3_TEXT);
+        $results = $db_statement->bindValue(':list', $list_new, SQLITE3_TEXT);
         $results = $results | $db_statement->execute();
         if ($results == false) echo $msg['LIST_DELETE_FAIL_DB'];
         else echo $msg['LIST_CREATE_OK'];
@@ -35,10 +34,10 @@ elseif ($action == "list_del") {
         # $request = strtr($db_requests['list_delete'], array("_LIST_" => $list_existing));
         # $results = $db->query($request);
         $db_statement = $db->prepare($db_requests['list_delete']);
-        $results = $db_statement->bindValue(':list', $list, SQLITE3_TEXT);
+        $results = $db_statement->bindValue(':list', $list_existing, SQLITE3_TEXT);
         $results = $results | $db_statement->execute();
         if ($results == false) echo "Failed deletion $list_new";
-        else echo "List $list_existing deleted ($request)";
+        else echo "List $list_existing deleted";
     }
     else echo "List '$list_existing' doesn't exist";
 }

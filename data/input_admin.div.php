@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+include dirname(__FILE__) . "/../include-all.php";
 ?>
 
 <h2><?php echo $msg['TITLE_input_admin']; ?></h2>

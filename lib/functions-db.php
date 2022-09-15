@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+include dirname(__FILE__) . "/../include-all.php";
 
 // Checks if the given list name exists (returns True or False)
 function is_list($db, $list_name) {
@@ -47,7 +47,7 @@ function is_user($db, $user) {
 
 // Retrieves a list of lists
 function get_list_of_lists($db) {
-    # include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
+    // include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
     global $db_requests;
     $list_list = array();
     $cpt = 0;
