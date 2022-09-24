@@ -9,11 +9,11 @@
     display: grid;
     grid-template-areas:
         'bigtitle bigtitle'
-        'input_acces liste'
         'input_liste liste'
         'input_admin liste'
+        'input_acces liste'
         'console     liste';
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
     grid-gap: 6px;
     background-color: darkgrey;
 }
