@@ -1,3 +1,7 @@
+<?php
+include dirname(__FILE__) . "/../include-all.php";
+?>
+
 <h2><?php echo $msg['TITLE_input_acces']; ?></h2>
 <p>
 <table>

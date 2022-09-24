@@ -1,26 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
-
-
-function get_list_users($db) {
-    include $_SERVER['DOCUMENT_ROOT'] . '/' . "include-all.php";
-    $db = new SQLite3($config['db_file']);
-    $request = $db_requests['user_get_all'];
-    $results = $db->query($request);
-    $list_users = array();
-    $cpt = 0;
-    if ($results != false) {
-        while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
-            // error_log("ROW ($cpt) ".print_r($row, true));
-            if (! in_array($row['user_name'], $list_users) ) {
-                array_push($list_users, $row['user_name']);
-            }
-            $cpt += 1;
-        }
-    }
-    else error_log("Echec DB avec '$request'");
-    return $list_users  ;
-}
+include dirname(__FILE__) . "/../include-all.php";
 ?>
 
 <h2><?php echo $msg['TITLE_input_admin']; ?></h2>
